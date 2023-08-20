@@ -324,6 +324,22 @@ div.background_media {
     flex-direction: column;
 }
 
+#projects .project_description h3 {
+    font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.625em 0.625em 0.625em 0;
+}
+
+#projects .project_description p {
+    font-family: MonaSansLight, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-right: 0.625em;
+    padding-bottom: 0.625em;
+}
+
+
 
 /* ==================== section#contact ==================== */
 #contact {
