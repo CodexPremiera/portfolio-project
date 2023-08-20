@@ -129,7 +129,6 @@ div.background_media {
 
 #footer_background {
     position: relative;
-    justify-content: flex-end;
     width: 100%;
     top: -54rem;
 }
@@ -137,6 +136,17 @@ div.background_media {
 #footer_background img {
     position: absolute;
     right: 0;
+}
+
+#project_background {
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+#project_background img {
+    position: absolute;
+    left: 0;
 }
 
 
