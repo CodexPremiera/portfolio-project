@@ -1,3 +1,11 @@
+/*
+    0 - 600px:      Phone
+    600 - 900px:    Tablet portrait
+    900 - 1200px:   Tablet landscape
+    [1200 - 1800] is where our normal styles apply
+    1800px + :      Big desktop
+*/
+
 /* ==================== typefaces ==================== */
 @font-face {
     font-family: MonaSansRegular;
@@ -39,9 +47,14 @@
 
 /* ==================== universal ==================== */
 html {
-    font-size: 16px;
     position: relative;
     top: 5.5rem;
+    scroll-behavior: smooth;
+}
+@media only screen and (min-width: 900px) {
+    html {
+        font-size: 16px;
+    }
 }
 body {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
@@ -53,9 +66,10 @@ img {
 
 /* ==================== header.section ==================== */
 header {
+    font-size: 1rem;
     width: 100%;
-    height: 5.5rem;
-    padding: 1rem 5rem;
+    height: 5.5em;
+    padding: 1em 2em;
     position: fixed;
     top: 0;
     z-index: 5;
@@ -71,14 +85,43 @@ header {
 .header_link {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
     text-transform: initial;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: 700;
     color: #333;
-    padding: 2rem;
+    padding: 2em;
 }
 .header_link:hover {
     color:#c4d353;
     transition: color 200ms;
+}
+@media only screen and (min-width: 600px) {
+    #header_nav_list {
+        display: block;
+    }
+    #header_nav_icon {
+        display: none;
+    }
+}
+@media only screen and (max-width: 900px) {
+    header{
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    header{
+        justify-content: flex-end;
+        padding: 1rem;
+        font-size: 75%;
+    }
+    #header_nav_list {
+        display: none;
+    }
+    #header_nav_icon {
+        display: block;
+    }
+    #hamburger_menu_close {
+        display: none;
+    }
 }
 
 /* ==================== main ==================== */
@@ -89,11 +132,30 @@ main {
     z-index: 0;
 }
 main .page_section {
-    max-width: calc(1300px + 3rem);
     min-width: 400px;
     flex-grow: 1;
     margin: 0 auto;
-    padding: 6rem 1.5rem 4rem;
+    padding: 6rem 2rem 4rem;
+}
+@media only screen and (min-width: 1200px) {
+    main .page_section {
+        max-width: calc(1200px);
+    }
+}
+@media only screen and (max-width: 1200px) {
+    main .page_section {
+        max-width: calc(900px);
+    }
+}
+@media only screen and (max-width: 900px) {
+    main .page_section {
+        max-width: calc(600px);
+    }
+}
+@media only screen and (max-width: 600px) {
+    main .page_section {
+        max-width: calc(500px);
+    }
 }
 
 /* ==================== .background_media ==================== */
@@ -129,6 +191,8 @@ main .page_section {
     align-items: flex-end;
     border: none;
     padding-bottom: 0;
+    min-width: 75ch;
+    font-size: 1rem;
 }
 #banner .page_section_container {
     width: 100%;
@@ -137,8 +201,8 @@ main .page_section {
     align-items: flex-start;
 }
 #banner_greeting {
-    font-size: 1.25rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.25em;
+    margin-bottom: 1.2em;
 }
 #banner_greeting>em {
     font-family: MonaSansItalic, Helvetica, Arial, sans-serif;
@@ -148,14 +212,14 @@ main .page_section {
     flex-direction: column;
 }
 #banner_name {
-    font-size: 6.25rem;
+    font-size: 6.25em;
     font-family: MonaSansBlack, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
     line-height: 100%;
     font-weight: 800;
     overflow-wrap: break-word;
     color: #24292f;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: block;
 }
 #banner_name::after {
@@ -163,10 +227,20 @@ main .page_section {
     position: relative;
     top: 0;
     z-index: 10;
-    height: .625rem;
-    width: 6rem;
+    height: .625em;
+    width: 6em;
     background: #c4d353;
     border-radius: 5px;
+}
+@media only screen and (max-width: 900px) {
+    #banner {
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #banner {
+        font-size: 0.8rem;
+    }
 }
 
 /* ==================== section#about ==================== */
@@ -177,7 +251,10 @@ main .page_section {
 }
 #about .page_section_container{
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    column-gap: 4.5rem;
+    row-gap: 2rem;
     justify-content: space-between;
 }
 #about_title {
@@ -192,7 +269,7 @@ main .page_section {
     display: block;
 }
 .about_content {
-    max-width: 540px;
+    width: 100%;
     flex-grow: 1;
 }
 #about_intro_article {
@@ -204,7 +281,7 @@ main .page_section {
     color: #24292f;
     font-size: 1.5rem;
     line-height: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.625em;
 }
 #about_intro_article::before {
     content: open-quote;
@@ -221,8 +298,15 @@ main .page_section {
     font-weight: 400;
     margin-bottom: 1.25rem;
 }
+@media only screen and (max-width: 1300px) {
+    .about_content {
+        max-width: 75ch;
+    }
+}
 
 /* ==================== section#projects ==================== */
+
+
 #project_article {
     display: flex;
     flex-direction: column;
@@ -306,13 +390,22 @@ main .page_section {
 #contact {
     height: auto;
     border: none;
+    display: flex;
+    justify-content: space-between;
     position: relative;
     padding: 8rem 1.5rem 6rem;
 }
 #contact .page_section_container{
     width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
+}
+@media only screen and (max-width: 1200px) {
+    #contact .page_section_container {
+        width: auto;
+        margin: 0 auto;
+        flex-direction: column;
+    }
 }
 #contact_title {
     font-size: 3rem;
@@ -337,6 +430,7 @@ main .page_section {
 }
 .contact_content {
     max-width: 540px;
+    min-width: 500px;
     flex-grow: 1;
 }
 #contact_article {
@@ -351,6 +445,7 @@ main .page_section {
     margin-bottom: 1rem;
 }
 #contact_form {
+    width: 100%;
     height: auto;
     align-items: center;
     display: flex;
@@ -421,15 +516,21 @@ footer {
     padding: 0 1.5rem;
     margin: 0 auto;
 }
+@media only screen and (max-width: 840px) {
+    #footer_upper {
+        flex-direction: column;
+    }
+}
 #footer_upper {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5rem 0;
+    padding: 5rem 0 2rem;
     border-bottom: 1px solid #444;
 }
 .footer_upper_content {
     max-width: 480px;
+    margin-bottom: 3rem;
     flex-grow: 1;
 }
 #footer_upper h3 {
