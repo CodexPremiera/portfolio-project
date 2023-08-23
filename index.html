@@ -10,38 +10,45 @@
     <div id="styles">
         <link rel="new stylesheet" href="resources/css/styles.css">
     </div>
-    <header id="home" class="header">
-        <nav>
+    <header id="header">
+        <nav id="header_nav">
             <ul>
-                <li><a href="#banner">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="header_link-wrapper">
+                    <a class="header_link" href="#banner">Home</a>
+                </li>
+                <li class="header_link-wrapper">
+                    <a class="header_link" href="#about">About</a>
+                </li>
+                <li class="header_link-wrapper">
+                    <a class="header_link" href="#projects">Projects</a>
+                </li>
+                <li class="header_link-wrapper">
+                    <a class="header_link" href="#contact">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="page">
+    <main>
         <div id="home_background" class="background_media">
             <video autoplay preload="none" loop="" muted="" data-threshold="0">
                 <source type="video/webm" src="resources/assets/video/background.mp4">
             </video>
         </div>
 
-        <section id="banner" class="page">
-            <div class="container">
-                <p><em>👋 Hello World! I am </em></p>
-                <div class="intro">
-                    <h1>Ashley Ken <br>Comandao</h1>
+        <section id="banner" class="page_section">
+            <div class="page_section_container">
+                <p id="banner_greeting"><em>👋 Hello World! I am </em></p>
+                <div id="banner_name_wrapper">
+                    <h1 id="banner_name">Ashley Ken <br>Comandao</h1>
                 </div>
             </div>
-
         </section>
 
-        <section id="about" class="page">
-            <h2>I <em>build</em> things for the web.</h2>
-            <div class="container">
-                <blockquote class="content">
+        <section id="about" class="page_section">
+            <h2 id="about_title">I build things for the web.</h2>
+            <div class="page_section_container">
+                <blockquote id="about_intro_article" class="about_content">
                     <p>
                         I am a <strong>Computer Science</strong> student from The Philippines working to become a
                         <strong>Full-Stack Engineer</strong>.
@@ -50,15 +57,15 @@
                         I love solving problems and creating meaningful products in the web. ”
                     </p>
                 </blockquote>
-                <article class="content">
+                <article  id="about_supplement_article" class="about_content">
                     <p>
                         It is only recently that I found my love for coding. In fact, I used to be a Civil Engineering
                         student before shifting to Computer Science.
                     </p>
                     <p>
                         Despite my rather short experience, I had been learning at a rapid pace. Aside from my college
-                        eduction, I also took courses at Codecademy, including Computer Science and Full-Stack Engineering
-                        Career Paths.
+                        eduction, I also took courses at Codecademy, including Computer Science and Full-Stack
+                        Engineering Career Paths.
                     </p>
                     <p>
                         In this portfolio, I am going to show you some of my works in my 8 months of coding.
@@ -70,9 +77,9 @@
         <div id="project_background" class="main_section_background background_media">
             <img decoding="async" alt="" src="resources/assets/jpeg/purple-galaxy-left.jpg">
         </div>
-        <section id="projects" class="page">
+        <section id="projects" class="page_section">
             <article id="project_article">
-                <div id="project_title">
+                <div id="project_article_title">
                     <h2>Some of my works</h2>
                 </div>
                 <p>
@@ -80,43 +87,42 @@
                     'firsts' forever that have taught me lot about programming and development.
                 </p>
             </article>
-
-            <div id="project_container">
-                <div id="project_hostage" class="project_box">
-                    <img class="project_icon"
+            <div id="projects_container" class="page_section_container">
+                <div id="project_hostage" class="project_card">
+                    <img class="project_thumbnail"
                          src="resources/assets/jpeg/project_hostage_icon.jpg"
                          alt="Image of the Mission Hostage Terminal Game">
                     <article class="project_description">
-                        <h3>Mission Hostage</h3>
-                        <p>A terminal game made using <code>python</code>. </p>
+                        <h3 class="project_name">Mission Hostage</h3>
+                        <p class="project_details">A terminal game made using <code>python</code>. </p>
                     </article>
                 </div>
 
-                <div id="project_2" class="project_box">
-                    <img class="project_icon"
+                <div id="project_2" class="project_card">
+                    <img class="project_thumbnail"
                          src="resources/assets/jpeg/project_lernspace_icon.jpg"
                          alt="Image of the Mission Hostage Terminal Game">
                     <article class="project_description">
-                        <h3>Lernspace: Company Home Page</h3>
-                        <p>Built a home page inspired by Brilliant.org</p>
+                        <h3 class="project_name">Lernspace: Company Home Page</h3>
+                        <p class="project_details">Built a home page inspired by Brilliant.org</p>
                     </article>
                 </div>
 
-                <div id="project_3" class="project_box">
-                    <img class="project_icon"
+                <div id="project_3" class="project_card">
+                    <img class="project_thumbnail"
                          src="resources/assets/jpeg/project_portfolio_icon.jpg"
                          alt="Image of the Mission Hostage Terminal Game">
                     <article class="project_description">
-                        <h3>Portfolio Website</h3>
-                        <p>Yes, this very website showing some of my works.</p>
+                        <h3 class="project_name">Portfolio Website</h3>
+                        <p class="project_details">Yes, this very website showing some of my works.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="page">
-            <div class="container">
-                <article class="content">
+        <section id="contact" class="page_section">
+            <div class="page_section_container">
+                <article id="contact_article" class="contact_content">
                     <div id="contact_title">
                         <h2>Reach out to me!</h2>
                     </div>
@@ -126,77 +132,77 @@
                     </p>
                 </article>
 
-                <form id="contact_form" class="content" action="index.html#contact" method="GET">
+                <form id="contact_form" class="contact_content" action="index.html#contact" method="GET">
                     <div id="name_input" class="contact_form_input">
-                        <label for="name">Your Name</label>
-                        <input type="text" name="name" id="name" value="" required placeholder="Enter your name" >
+                        <label class="contact_form_input_asked" for="name">Your Name</label>
+                        <input class="contact_form_input_response"
+                               type="text" name="name" id="name" value="" required placeholder="Enter your name" >
                     </div>
                     <div id="email_input" class="contact_form_input">
-                        <label for="email">Email Address</label>
-                        <input type="text" name="email" id="email" placeholder="Enter your email address" required>
+                        <label class="contact_form_input_asked" for="email">Email Address</label>
+                        <input class="contact_form_input_response"
+                               type="text" name="email" id="email" placeholder="Enter your email address" required>
                     </div>
                     <div id="message_input" class="contact_form_input">
-                        <label for="message">Your Message</label>
-                        <textarea name="message" id="message" rows="5" minlength="30" required
-                                  placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"></textarea>
+                        <label class="contact_form_input_asked" for="message">Your Message</label>
+                        <textarea class="contact_form_input_response"
+                                  name="message" id="message" rows="5" minlength="30" required
+                                  placeholder="Hi, I think we need a design system for our products at Company X. How can soon you hop on to discuss this?"></textarea>
                     </div>
-
-                    <div class="button_container">
-                        <button id="submit_button" type="submit">
+                    <div id="contact_form_submit" class="button_container">
+                        <button id="contact_form_submit_button" type="submit">
                             Submit
                         </button>
                     </div>
-
                 </form>
             </div>
         </section>
     </main>
-
 
     <footer class="footer">
         <div id="footer_background" class="main_section_background background_media">
             <img decoding="async" alt="" src="resources/assets/jpeg/footer-galaxy-right.jpg">
         </div>
         <div id="footer__container">
-            <div id="upper__footer">
-                <article class="upper__footer content hero">
+            <div id="footer_upper">
+                <article id="footer_signature" class="footer_upper_content">
                     <h3>Ashley Ken Comandao</h3>
                     <p>
                         A current Computer Science student working to become a highly-capable <br>Full-Stack Web Engineer.
                     </p>
                 </article>
 
-                <nav class="upper__footer content social">
+                <nav id="footer_socials" class="footer_upper_content">
                     <h3>
                         <span>Social</span>
                     </h3>
-                    <div id="social__icons" class="upper__footer">
+                    <div id="social_icons" class="upper__footer">
                         <a target="_blank" rel="noreferrer" href="#">
-                            <img class="footer__icon"
+                            <img class="footer_social_icon"
                                  src="resources/assets/png/linkedin-ico.png"
                                  alt="icon"
                             />
                         </a>
                         <a target="_blank" rel="noreferrer" href="#">
-                            <img class="footer__icon"
+                            <img class="footer_social_icon"
                                  src="resources/assets/png/github-ico.png"
                                  alt="icon"
                             />
                         </a>
                         <a target="_blank" rel="noreferrer" href="#">
-                            <img class="footer__icon"
+                            <img class="footer_social_icon"
                                  src="resources/assets/png/twitter-ico.png"
                                  alt="icon"
                             />
                         </a>
                         <a target="_blank" rel="noreferrer" href="#">
-                            <img class="footer__icon"
+                            <img class="footer_social_icon"
                                  src="resources/assets/png/yt-ico.png"
                                  alt="icon"
                             />
                         </a>
                         <a target="_blank" rel="noreferrer" href="#">
-                            <img class="footer__icon"
+                            <img class="footer_social_icon"
                                  src="resources/assets/png/insta-ico.png"
                                  alt="icon"
                             />
@@ -205,7 +211,7 @@
                 </nav>
             </div>
 
-            <div id="lower__footer">
+            <div id="lower_footer">
                 &copy; Copyright 2023. Made by
                 <a rel="noreferrer" target="_blank" href="">
                     Ashley Ken Comandao
