@@ -180,6 +180,9 @@ main .page_section {
     top: -5rem;
     right: 0;
 }
+#home_background video {
+    margin: 0 auto;
+}
 #project_background img {
     position: absolute;
     left: 0;
@@ -202,6 +205,16 @@ main .page_section {
     padding-bottom: 0;
     min-width: 75ch;
     font-size: 1rem;
+}
+@media only screen and (max-width: 1200px){
+    #banner {
+        height: calc(72vh);
+    }
+}
+@media only screen and (max-width: 900px){
+    #banner {
+        height: calc(40vh);
+    }
 }
 #banner .page_section_container {
     width: 100%;
