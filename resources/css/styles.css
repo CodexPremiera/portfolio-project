@@ -48,7 +48,6 @@
 /* ==================== universal ==================== */
 html {
     position: relative;
-    top: 5.5rem;
     scroll-behavior: smooth;
 }
 @media only screen and (min-width: 900px) {
@@ -130,6 +129,7 @@ main {
     width: 100%;
     margin: 0 auto 10rem;
     z-index: 0;
+    padding-top: 5.5rem;
 }
 main .page_section {
     min-width: 400px;
@@ -137,9 +137,14 @@ main .page_section {
     margin: 0 auto;
     padding: 6rem 2rem 4rem;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1440px) {
     main .page_section {
-        max-width: calc(1200px);
+        max-width: calc(1340px);
+    }
+}
+@media only screen and (max-width: 1440px) {
+    main .page_section {
+        max-width: calc(1100px);
     }
 }
 @media only screen and (max-width: 1200px) {
@@ -147,7 +152,7 @@ main .page_section {
         max-width: calc(900px);
     }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
     main .page_section {
         max-width: calc(600px);
     }
@@ -252,7 +257,7 @@ main .page_section {
 #about .page_section_container{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     column-gap: 4.5rem;
     row-gap: 2rem;
     justify-content: space-between;
@@ -429,8 +434,8 @@ main .page_section {
     border-radius: 5px;
 }
 .contact_content {
-    max-width: 540px;
-    min-width: 500px;
+    max-width: 600px;
+    min-width: 400px;
     flex-grow: 1;
 }
 #contact_article {
