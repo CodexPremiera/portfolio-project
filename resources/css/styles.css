@@ -50,11 +50,6 @@ html {
     position: relative;
     scroll-behavior: smooth;
 }
-@media only screen and (min-width: 900px) {
-    html {
-        font-size: 16px;
-    }
-}
 body {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
 }
@@ -161,7 +156,7 @@ main .page_section {
         max-width: calc(600px);
     }
 }
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     main .page_section {
         max-width: calc(500px);
     }
