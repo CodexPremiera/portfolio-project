@@ -117,6 +117,10 @@ header {
     }
     #header_nav_icon {
         display: block;
+        height: 2.5rem;
+    }
+    #header_nav_icon img {
+        height: 100%;
     }
     #hamburger_menu_close {
         display: none;
