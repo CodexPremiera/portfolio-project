@@ -1,3 +1,11 @@
+/*
+    0 - 600px:      Phone
+    600 - 900px:    Tablet portrait
+    900 - 1200px:   Tablet landscape
+    [1200 - 1800] is where our normal styles apply
+    1800px + :      Big desktop
+*/
+
 /* ==================== typefaces ==================== */
 @font-face {
     font-family: MonaSansRegular;
@@ -6,10 +14,6 @@
 @font-face {
     font-family: MonaSansItalic;
     src: url("../fonts/Mona_Sans/Mona-Sans-RegularItalic.otf");
-}
-@font-face {
-    font-family: MonaSansMedium;
-    src: url("../fonts/Mona_Sans/Mona-Sans-Medium.otf");
 }
 @font-face {
     font-family: MonaSansBold;
@@ -37,29 +41,18 @@
     src: url("../fonts/Hubot_Sans/Hubot-Sans-Medium.otf");
 }
 @font-face {
-    font-family: HubotSansBold;
-    src: url("../fonts/Hubot_Sans/Hubot-Sans-Bold.otf");
-}
-@font-face {
-    font-family: HubotSansBlack;
-    src: url("../fonts/Hubot_Sans/Hubot-Sans-Black.otf");
-}
-@font-face {
     font-family: HubotSansLight;
     src: url("../fonts/Hubot_Sans/Hubot-Sans-Light.otf");
 }
 
 /* ==================== universal ==================== */
 html {
-    font-size: 16px;
     position: relative;
-    top: 5.5rem;
+    scroll-behavior: smooth;
 }
-
 body {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
 }
-
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
@@ -67,9 +60,10 @@ img {
 
 /* ==================== header.section ==================== */
 header {
+    font-size: 1rem;
     width: 100%;
-    height: 5.5rem;
-    padding: 1rem 5rem;
+    height: 5.5em;
+    padding: 1em 2em;
     position: fixed;
     top: 0;
     z-index: 5;
@@ -79,22 +73,53 @@ header {
     background-color: rgba(255,255,255,0.5);
     backdrop-filter: blur(12px);
 }
-
-header nav li {
+.header_link-wrapper {
     display: inline-block;
 }
-
-header nav a {
-    padding: 2rem;
+.header_link {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
     text-transform: initial;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: 700;
     color: #333;
+    padding: 2em;
 }
-
-header nav a:hover {
+.header_link:hover {
     color:#c4d353;
+    transition: color 200ms;
+}
+@media only screen and (min-width: 600px) {
+    #header_nav_list {
+        display: block;
+    }
+    #header_nav_icon {
+        display: none;
+    }
+}
+@media only screen and (max-width: 900px) {
+    header{
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    header{
+        justify-content: flex-end;
+        padding: 1rem;
+        font-size: 75%;
+    }
+    #header_nav_list {
+        display: none;
+    }
+    #header_nav_icon {
+        display: block;
+        height: 2.5rem;
+    }
+    #header_nav_icon img {
+        height: 100%;
+    }
+    #hamburger_menu_close {
+        display: none;
+    }
 }
 
 /* ==================== main ==================== */
@@ -103,42 +128,68 @@ main {
     width: 100%;
     margin: 0 auto 10rem;
     z-index: 0;
+    padding-top: 5.5rem;
 }
-
-main section.page {
-    max-width: calc(1300px + 3rem);
+main .page_section {
     min-width: 400px;
     flex-grow: 1;
     margin: 0 auto;
-    padding: 10rem 1.5rem 0;
+    padding: 6rem 2rem 4rem;
+}
+@media only screen and (min-width: 1440px) {
+    main .page_section {
+        max-width: calc(1340px);
+    }
+}
+@media only screen and (max-width: 1440px) {
+    main .page_section {
+        max-width: calc(1100px);
+    }
+}
+@media only screen and (max-width: 1200px) {
+    main .page_section {
+        max-width: calc(900px);
+    }
+}
+@media only screen and (max-width: 960px) {
+    main .page_section {
+        max-width: calc(600px);
+    }
+}
+@media screen and (max-width: 600px) {
+    main .page_section {
+        max-width: calc(500px);
+    }
 }
 
-/* ==================== div. background ==================== */
-div.background_media {
+/* ==================== .background_media ==================== */
+.background_media {
     width: 100%;
     display: flex;
+    position: relative;
+    top: 0;
+    z-index: -999999;
+}
+#home_background {
     position: absolute;
     top: -5rem;
     right: 0;
-    z-index: -999999;
 }
-
-#home_background>video {
-    width: 100%;
+#home_background video {
+    margin: 0 auto;
 }
-
+#project_background img {
+    position: absolute;
+    left: 0;
+}
 #footer_background {
-    position: relative;
-    justify-content: flex-end;
-    width: 100%;
     top: -54rem;
+    right: 0;
 }
-
 #footer_background img {
     position: absolute;
     right: 0;
 }
-
 
 /* ==================== section#banner ==================== */
 #banner {
@@ -147,66 +198,83 @@ div.background_media {
     align-items: flex-end;
     border: none;
     padding-bottom: 0;
+    min-width: 75ch;
+    font-size: 1rem;
 }
-
-#banner .container {
+@media only screen and (max-width: 1200px){
+    #banner {
+        height: calc(72vh);
+    }
+}
+@media only screen and (max-width: 900px){
+    #banner {
+        height: calc(40vh);
+    }
+}
+#banner .page_section_container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-
-#banner p {
-    font-size: 1.25rem;
-    margin-bottom: 1.2rem;
+#banner_greeting {
+    font-size: 1.25em;
+    margin-bottom: 1.2em;
 }
-
-#banner p>em {
+#banner_greeting>em {
     font-family: MonaSansItalic, Helvetica, Arial, sans-serif;
 }
-
-#banner .intro {
+#banner_name_wrapper {
     display: flex;
     flex-direction: column;
 }
-
-#banner h1 {
-    font-size: 6.25rem;
+#banner_name {
+    font-size: 6.25em;
     font-family: MonaSansBlack, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
     line-height: 100%;
     font-weight: 800;
     overflow-wrap: break-word;
     color: #24292f;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: block;
 }
-
-#banner .intro::after {
+#banner_name::after {
     content: '';
     position: relative;
     top: 0;
     z-index: 10;
-    height: .625rem;
-    width: 6rem;
+    height: .625em;
+    width: 6em;
     background: #c4d353;
     border-radius: 5px;
+}
+@media only screen and (max-width: 900px) {
+    #banner {
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #banner {
+        font-size: 0.8rem;
+    }
 }
 
 /* ==================== section#about ==================== */
 #about {
     height: auto;
-    padding-top: 6rem;
+    padding-top: 10rem;
     border: none;
 }
-
-#about .container{
+#about .page_section_container{
     width: 100%;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    column-gap: 4.5rem;
+    row-gap: 2rem;
     justify-content: space-between;
 }
-
-#about h2 {
+#about_title {
     font-size: 4rem;
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
@@ -217,27 +285,22 @@ div.background_media {
     margin-bottom: 7rem;
     display: block;
 }
-
-
-#about .container .content{
-    max-width: 540px;
+.about_content {
+    width: 100%;
     flex-grow: 1;
 }
-
-#about .container blockquote {
+#about_intro_article {
     display: block;
 }
-
-#about .container blockquote p {
-    font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
+#about_intro_article p {
+    font-family: HubotSansBold, Helvetica, Arial, sans-serif;
     font-weight: 500;
     color: #24292f;
     font-size: 1.5rem;
     line-height: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.625em;
 }
-
-#about .container blockquote::before {
+#about_intro_article::before {
     content: open-quote;
     display: block;
     font-size: 80px;
@@ -246,17 +309,20 @@ div.background_media {
     top: -1rem;
     color: #b1d353;
 }
-
-#about .container article p {
+#about_supplement_article p {
     font-family: MonaSansLight, Helvetica, Arial, sans-serif;
     line-height: 160%;
     font-weight: 400;
     margin-bottom: 1.25rem;
 }
+@media only screen and (max-width: 1300px) {
+    .about_content {
+        max-width: 75ch;
+    }
+}
 
 /* ==================== section#projects ==================== */
-#projects {
-}
+
 
 #project_article {
     display: flex;
@@ -265,8 +331,7 @@ div.background_media {
     text-align: center;
     margin-bottom: 4rem;
 }
-
-#project_title {
+#project_article_title {
     font-size: 3rem;
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
@@ -278,8 +343,7 @@ div.background_media {
     display: block;
     position: relative;
 }
-
-#project_title::after {
+#project_article_title::after {
     content: '';
     position: absolute;
     bottom: -0.625em;
@@ -289,7 +353,6 @@ div.background_media {
     border-radius: 5px;
     transform: translateX(-50%);
 }
-
 #project_article p {
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     font-weight: 500;
@@ -299,29 +362,44 @@ div.background_media {
     max-width: 72ch;
 }
 
-#project_container {
+#projects_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     row-gap: 1rem;
     column-gap: 1rem;
 }
 
-#projects .project_box {
+.project_card {
     border-radius: 1.2rem;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
 
-#projects .project_icon {
+.project_thumbnail {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
-#projects .project_description {
+.project_description {
     width: 100%;
     margin: 1.2rem;
     display: flex;
     flex-direction: column;
+}
+
+.project_name {
+    font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.625em 0.625em 0.625em 0;
+}
+
+.project_details {
+    font-family: MonaSansLight, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-right: 0.625em;
+    padding-bottom: 0.625em;
 }
 
 
@@ -329,17 +407,24 @@ div.background_media {
 #contact {
     height: auto;
     border: none;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    padding-top: 12rem;
+    padding: 8rem 1.5rem 6rem;
 }
-
-#contact .container{
+#contact .page_section_container{
     width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
 }
-
-#contact #contact_title {
+@media only screen and (max-width: 1200px) {
+    #contact .page_section_container {
+        width: auto;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+}
+#contact_title {
     font-size: 3rem;
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
@@ -351,8 +436,7 @@ div.background_media {
     display: block;
     position: relative;
 }
-
-#contact #contact_title::after {
+#contact_title::after {
     content: '';
     position: absolute;
     bottom: -0.625em;
@@ -361,17 +445,15 @@ div.background_media {
     background: #c4d353;
     border-radius: 5px;
 }
-
-#contact .container .content{
-    max-width: 540px;
+.contact_content {
+    max-width: 600px;
+    min-width: 400px;
     flex-grow: 1;
 }
-
-#contact .container article {
+#contact_article {
     display: block;
 }
-
-#contact .container article p {
+#contact_article p {
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     font-weight: 500;
     color: #24292f;
@@ -379,8 +461,8 @@ div.background_media {
     line-height: 2.5rem;
     margin-bottom: 1rem;
 }
-
 #contact_form {
+    width: 100%;
     height: auto;
     align-items: center;
     display: flex;
@@ -391,42 +473,35 @@ div.background_media {
     border-radius: 1.33rem;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
-
 .contact_form_input {
     width: 100%;
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
 }
-
-.contact_form_input label {
+#name_input, #email_input {
+    height: 25%;
+}
+#message_input {
+    height: 50%;
+}
+.contact_form_input_asked {
     font-family: HubotSansLight, Helvetica, Arial, sans-serif;
     font-weight: 200;
     font-size: 1rem;
     margin-bottom: 0.25em;
 }
-
-.contact_form_input input, .contact_form_input textarea {
+.contact_form_input_response {
     font-family: MonaSansLight, Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
     padding: 0.625em 0.625em 0.625em 0;
     border-bottom: 1px solid #24292f;
 }
-
-#name_input, #email_input {
-    height: 25%;
-}
-
-#message_input {
-    height: 50%;
-}
-
 #message_input textarea {
     resize: none;
 }
-
-.button_container {
+#contact_form_submit {
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -434,8 +509,7 @@ div.background_media {
     margin: 0;
     width: 30%;
 }
-
-#submit_button {
+#contact_form_submit_button {
     background-color: #b1d353;
     border-radius: 5px;
     padding: 1em 2em;
@@ -451,7 +525,6 @@ footer {
     color: #fff;
     z-index: 10;
 }
-
 #footer__container {
     display: flex;
     flex-direction: column;
@@ -460,60 +533,55 @@ footer {
     padding: 0 1.5rem;
     margin: 0 auto;
 }
-
-#upper__footer {
+@media only screen and (max-width: 840px) {
+    #footer_upper {
+        flex-direction: column;
+    }
+}
+#footer_upper {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5rem 0;
+    padding: 5rem 0 2rem;
     border-bottom: 1px solid #444;
 }
-
-#upper__footer .content {
+.footer_upper_content {
     max-width: 480px;
+    margin-bottom: 3rem;
     flex-grow: 1;
 }
-
-#upper__footer h3 {
+#footer_upper h3 {
     font-family: MonaSansBold, Helvetica, Arial, sans-serif;
     font-weight: 600;
     margin-bottom: 1.2rem;
 }
-
-#upper__footer p {
+#footer_upper p {
     font-family: HubotSansLight, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: .8rem;
     line-height: 1.5rem;
 }
 
-#upper__footer nav.social {
+#footer_socials {
     max-width: 200px;
 }
-
-#upper__footer #social__icons {
+#social_icons {
     display: inline-flex;
 }
-
-#upper__footer .footer__icon {
+.footer_social_icon{
     margin-right: 1rem;
     width: 1.5rem;
 }
-
-#lower__footer {
+#lower_footer {
     display: block;
     margin: 0 auto;
     padding: 2.5rem 0;
-}
-
-#lower__footer {
     font-family: MonaSansUltraLight, Helvetica, Arial, sans-serif;
     font-weight: 300;
     font-size: .8rem;
     line-height: 1.4rem;
 }
-
-#lower__footer a {
+#lower_footer a {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
     font-weight: 500;
     color: white;
