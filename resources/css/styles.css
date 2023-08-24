@@ -50,6 +50,26 @@ html {
     position: relative;
     scroll-behavior: smooth;
 }
+@media only screen and (max-width: 1200px){
+    html {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 900px){
+    html {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 10px;
+    }
+}
 body {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
 }
@@ -159,6 +179,11 @@ main .page_section {
         max-width: 500px;
     }
 }
+@media screen and (max-width: 400px) {
+    main .page_section {
+        max-width: 360px;
+    }
+}
 
 /* ==================== .background_media ==================== */
 .background_media {
@@ -194,7 +219,6 @@ main .page_section {
     height: calc(100vh - 11rem);
     display: flex;
     align-items: flex-end;
-    border: none;
     padding-bottom: 0;
     font-size: 1rem;
 }
@@ -244,12 +268,20 @@ main .page_section {
 }
 @media only screen and (max-width: 900px){
     #banner {
-        height: calc(40vh);
+        height: calc(50vh);
     }
 }
 @media only screen and (max-width: 600px) {
+    #banner {
+        height: calc(40vh);
+    }
     #banner_name {
         font-size: 5em;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #banner_name {
+        font-size: 4.2em;
     }
 }
 
@@ -257,7 +289,6 @@ main .page_section {
 #about {
     height: auto;
     padding-top: 10rem;
-    border: none;
 }
 #about .page_section_container{
     width: 100%;
@@ -268,15 +299,25 @@ main .page_section {
     justify-content: space-between;
 }
 #about_title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     letter-spacing: -2px;
     line-height: 100%;
     font-weight: 600;
     overflow-wrap: break-word;
     color: #24292f;
-    margin-bottom: 7rem;
+    margin-bottom: 4.8rem;
     display: block;
+    position: relative;
+}
+#about_title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.625em;
+    height: 0.625rem;
+    width: 6rem;
+    background: #c4d353;
+    border-radius: 5px;
 }
 .about_content {
     width: 100%;
@@ -293,15 +334,6 @@ main .page_section {
     line-height: 2.5rem;
     margin-bottom: 0.625em;
 }
-#about_intro_article::before {
-    content: open-quote;
-    display: block;
-    font-size: 80px;
-    line-height: 0;
-    position: relative;
-    top: -1rem;
-    color: #b1d353;
-}
 #about_supplement_article p {
     font-family: MonaSansLight, Helvetica, Arial, sans-serif;
     line-height: 160%;
@@ -313,10 +345,19 @@ main .page_section {
         max-width: 75ch;
     }
 }
+@media only screen and (max-width: 900px) {
+    #about {
+        padding-top: 6rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #about .page_section_container{
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        row-gap: 1rem;
+    }
+}
 
 /* ==================== section#projects ==================== */
-
-
 #project_article {
     display: flex;
     flex-direction: column;
@@ -351,42 +392,36 @@ main .page_section {
     font-weight: 500;
     color: #24292f;
     font-size: 1.25rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
     max-width: 72ch;
 }
-
 #projects_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     row-gap: 1rem;
     column-gap: 1rem;
 }
-
 .project_card {
     border-radius: 1.2rem;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0,0,0,0.1);
 }
-
 .project_thumbnail {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
-
 .project_description {
-    width: 100%;
+    max-width: 100%;
     margin: 1.2rem;
     display: flex;
     flex-direction: column;
 }
-
 .project_name {
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
     padding: 0.625em 0.625em 0.625em 0;
 }
-
 .project_details {
     font-family: MonaSansLight, Helvetica, Arial, sans-serif;
     font-weight: 400;
@@ -394,12 +429,15 @@ main .page_section {
     padding-right: 0.625em;
     padding-bottom: 0.625em;
 }
-
+@media only screen and (max-width: 600px) {
+    #projects_container {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
 
 /* ==================== section#contact ==================== */
 #contact {
     height: auto;
-    border: none;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -444,6 +482,14 @@ main .page_section {
 }
 #contact_article {
     display: block;
+}
+@media only screen and (min-width: 1200px) {
+    #contact_article {
+        margin-right: 1.5rem;
+    }
+    #contact_form {
+        margin-left: 1.5rem;
+    }
 }
 #contact_article p {
     font-family: HubotSansMedium, Helvetica, Arial, sans-serif;
