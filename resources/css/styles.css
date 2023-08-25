@@ -101,7 +101,8 @@ header {
 #header_dropdown {
     height: auto;
     justify-content: flex-end;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
+    display: block;
 }
 #header_nav_menu{
     display: flex;
