@@ -101,6 +101,7 @@ header {
 #header_dropdown {
     height: auto;
     justify-content: flex-end;
+    padding-top: 0;
     padding-bottom: 2em;
     display: block;
 }
@@ -115,7 +116,7 @@ header {
 }
 .header_menu_link-wrapper {
     display: inline-block;
-    padding: 1em;
+    padding: 1em 0 1em 1em;
 }
 .header_link {
     font-family: MonaSansRegular, Helvetica, Arial, sans-serif;
@@ -131,6 +132,9 @@ header {
 @media only screen and (min-width: 600px) {
     #header_nav_list {
         display: block;
+    }
+    #header_dropdown {
+        display: none;
     }
     #header_nav_icon {
         display: none;
