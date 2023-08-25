@@ -133,9 +133,6 @@ header {
     #header_nav_list {
         display: block;
     }
-    #header_dropdown {
-        display: none;
-    }
     #header_nav_icon {
         display: none;
     }
