@@ -10,28 +10,47 @@
     <link rel="new stylesheet" href="resources/css/styles.css">
 </head>
 <body>
-    <header id="header">
-        <nav id="header_nav_list">
-            <ul>
-                <li class="header_link-wrapper">
+    <header>
+        <section id="header_bar" class="header_section">
+            <nav id="header_nav_list">
+                <ul>
+                    <li class="header_link-wrapper">
+                        <a class="header_link" href="#home">Home</a>
+                    </li>
+                    <li class="header_link-wrapper">
+                        <a class="header_link" href="#about">About</a>
+                    </li>
+                    <li class="header_link-wrapper">
+                        <a class="header_link" href="#projects">Projects</a>
+                    </li>
+                    <li class="header_link-wrapper">
+                        <a class="header_link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="header_nav_icon">
+                <img id="hamburger_menu" src="resources/assets/svg/hamburger_menu.svg" alt="open menu button">
+                <img id="hamburger_menu_close"  src="resources/assets/svg/hamburger_menu_close.svg" alt="close menu button">
+            </nav>
+        </section>
+        <nav id="header_dropdown" class="header_section">
+            <ul id="header_nav_menu">
+                <li class="header_menu_link-wrapper">
                     <a class="header_link" href="#home">Home</a>
                 </li>
-                <li class="header_link-wrapper">
+                <li class="header_menu_link-wrapper">
                     <a class="header_link" href="#about">About</a>
                 </li>
-                <li class="header_link-wrapper">
+                <li class="header_menu_link-wrapper">
                     <a class="header_link" href="#projects">Projects</a>
                 </li>
-                <li class="header_link-wrapper">
+                <li class="header_menu_link-wrapper">
                     <a class="header_link" href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
-        <nav id="header_nav_icon">
-            <img id="hamburger_menu" src="resources/assets/svg/hamburger_menu.svg" alt="open menu button">
-            <img id="hamburger_menu_close"  src="resources/assets/svg/hamburger_menu_close.svg" alt="close menu button">
-        </nav>
     </header>
+
 
     <main id="home">
         <div id="home_background" class="background_media">
