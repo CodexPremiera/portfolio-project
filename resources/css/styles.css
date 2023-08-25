@@ -103,7 +103,7 @@ header {
     justify-content: flex-end;
     padding-top: 0;
     padding-bottom: 2em;
-    display: block;
+    display: none;
 }
 #header_nav_menu{
     display: flex;
